@@ -14,5 +14,7 @@ router.get('/query/:id', blogController.getBlogById);
 router.patch('/update/:id', blogController.updateBlog);
 // 根据 id 删除博客
 router.delete('/delete/:id', blogController.deleteBlog);
+// 根据标签id查找关联了该标签的博客
+router.get("/queryByTag/:tagId", blogController.queryByTag) ;
 
 module.exports = router;

@@ -7,3 +7,5 @@
     5--|
        |- 登录：localhost:3000/auth/login  urlencoded {"username":"string" , "password":"string"}
        |- 注册：localhost:3000/auth/register urlencoded {"username":"string"  , "password":"string" , "nickname" : "string"}
+
+    6--搭配自己的数据库食用更佳

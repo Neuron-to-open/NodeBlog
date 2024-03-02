@@ -7,6 +7,7 @@ const blogRoutes = require("./routes/blogs");
 const tagRoutes = require("./routes/tags");
 const fileRoutes = require("./routes/file");
 const sequelize = require("./config/database");
+const authMiddleware = require("./middlerware/authMiddleware") ;
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.use("/tempFiles", express.static(path.join(__dirname, "tempFiles"))) ;
 
 // 路由
 app.use("/auth", authRoutes) ;
+app.use(authMiddleware) ;
 app.use("/blogs", blogRoutes) ;
 app.use("/tags", tagRoutes) ;
 app.use("/file", fileRoutes) ;

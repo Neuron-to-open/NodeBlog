@@ -22,7 +22,7 @@ Tag.init(
 	},
 	{
 		sequelize,
-		modelName: 'Blog'
+		modelName: 'Tag',
 	}
 );
 

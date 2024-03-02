@@ -4,6 +4,7 @@ const sequelize = require('../config/database');
 const User = require('./User');
 const Tag = require('./Tag');
 
+
 class Blog extends Model {}
 
 Blog.init(
@@ -19,7 +20,7 @@ Blog.init(
 			allowNull: false
 		},
 		coverImage: {
-			comment: '博客内容',
+			comment: '封面图',
 			type: DataTypes.STRING
 		},
 		isDeleted: {
@@ -47,7 +48,7 @@ Tag.belongsToMany(Blog, {
 	as: 'blogs'
 });
 
-Blog.belongsTo(User, { foreignKey: 'UserID', as: 'user' });
+Blog.belongsTo(User, { foreignKey: 'userId', as: 'user' });
 User.hasMany(Blog, { foreignKey: 'userId', as: 'user' });
 
 module.exports = Blog;
