@@ -1,12 +1,12 @@
-const express = require("express")
-const bodyParser = require("body-parser")
+const express = require("express");
+const bodyParser = require("body-parser");
 const cors = require("cors") ;
 const path = require("path") ;
-const authRoutes = require("./routes/auth")
-const blogRoutes = require("./routes/blogs")
-const tagRoutes = require("./routes/tags")
-const fileRoutes = require("./routes/file")
-const sequelize = require("sequelize")
+const authRoutes = require("./routes/auth");
+const blogRoutes = require("./routes/blogs");
+const tagRoutes = require("./routes/tags");
+const fileRoutes = require("./routes/file");
+const sequelize = require("./config/database");
 
 const app = express()
 
@@ -35,9 +35,9 @@ sequelize
     .then(() => {
         console.log("数据库同步成功") ;
     })
-    .catch((error) => {
-        console.error("数据库同步失败", error) ;
-    }) ;
+    .catch((err) => {
+        console.log("Error Syncing database:", err) ;
+    })
 
 // 启动服务器
 const port = process.env.PORT || 3000 ;
