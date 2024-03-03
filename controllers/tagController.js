@@ -40,18 +40,19 @@ async function getTags(req, res) {
     try {
         const tags = await Tag.findAll({
             where: { isDeleted:false },
-            // 从返回结果中溢出 isDeleted 字段
+            // 从返回结果中移除 isDeleted 字段
             attributes: { exclude: ["isDeleted"] },
         }) ;
+        console.log(tags) ;
         res.json(tags) ;
     }catch (error) {
         res.status(500).json( {error:error.message}) ;
     }
 } 
 
-async function updateTag(req, res) {
-    // todo
-} 
+// async function updateTag(req, res) {
+//     // todo
+// } 
 
 async function deleteTag(req, res) {
     // todo
@@ -69,4 +70,4 @@ async function deleteTag(req, res) {
     } 
 }
 
-module.exports = {createTag, getTags, updateTag, deleteTag} ;
+module.exports = {createTag, getTags, deleteTag} ;
