@@ -6,7 +6,8 @@ const sequelize = new Sequelize(
     //database user_name
     "root",
     //passwd
-    "Mysqlyyds.666",
+    "your-password",
+    //
     {
         host:"59.110.126.202",
         dialect:"mysql",
