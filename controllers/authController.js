@@ -12,7 +12,7 @@ async function register (req, res) {
         //检查用户名是否已存在
         const existingUser = await User.findOne( {where: {username} }) ;
         if (existingUser) {
-            return res.status(400).json( {msg: "USername already exists!"})
+            return res.status(400).json( {msg: "Username already exists!"})
         }
 
         // 对密码进行加密
